@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tipo sanguineo</title>
+</head>
+<body>
+	<label>Escolha seu tipo sanguineo</label>
+	<label>
+		<input type="radio" name="valor" value="A">Tipo A
+	</label>
+	<label>
+		<input type="radio" name="valor" value="B">Tipo B
+	</label>
+	<label>
+		<input type="radio" name="valor" value="AB">Tipo AB
+	</label>
+	<label>
+		<input type="radio" name="valor" value="O">Tipo O
+	</label>
+	<button onclick="getSangue()">Enviar!</button>
+	<p id="resultado"></p>
+	<script type="text/javascript">
+		function getSangue() {
+			var sangue = document.querySelector("input[name='valor']:checked").value;
+
+			switch (sangue){
+				case 'A':
+				document.getElementById('resultado').innerHTML="Seu tipo sanguineo é A. Legal.";
+				break;
+				case 'AB':
+				document.getElementById('resultado').innerHTML="Seu tipo sanguineo é AB. Ok.";
+				break;
+				case 'B':
+				document.getElementById('resultado').innerHTML="Seu tipo sanguineo é B. Diferente.";
+				break;
+				case 'O':
+				document.getElementById('resultado').innerHTML="Seu tipo sanguineo é O. Você é um super herói.";
+				break;
+				default:
+				document.getElementById('resultado').innerHTML="Mó loucura";
+			}
+		}
+	</script>
+</body>
+</html>
