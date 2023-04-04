@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Estado Civil companheiro</title>
+</head>
+<body>
+	<label>Digite seu estado civil:</label>
+	<input type="text" id="estado" placeholder="Ex: Solteiro">
+	<p></p>
+	<button onclick="exibirMensagem(document.getElementById('estado').value)">Enviar!</button>
+	<p id="resposta"></p>
+	<script type="text/javascript">
+		function exibirMensagem(estado) {
+			switch(estado){
+				case 'Solteiro':
+				document.getElementById('resposta').innerHTML = "Vai pra balada pai";
+				break;
+				case 'Casado':
+				document.getElementById('resposta').innerHTML = "Nem chamou pro casamento";
+				break;
+				case 'Viúvo':
+				document.getElementById('resposta').innerHTML = "Meus pêsames";
+				break;
+				case 'Separado':
+				document.getElementById('resposta').innerHTML = "Mostra que quem se deu bem foi você";
+				break;
+				default:
+				document.getElementById('resposta').innerHTML = "Não tenho esse estado em minha base de dados";
+			}
+		}
+	</script>
+</body>
+</html>
