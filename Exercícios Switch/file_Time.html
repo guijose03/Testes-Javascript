@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Time do coração</title>
+</head>
+<body>
+	<label>Qual é o seu time?</label>
+	<label>
+		<input type="radio" name="time" value="Corinthians"> Corinthians
+	</label>
+	<label>
+		<input type="radio" name="time" value="Flamengo"> Flamengo
+	</label>
+	<label>
+		<input type="radio" name="time" value="Santos"> Santos
+	</label>
+	<label>
+		<input type="radio" name="time" value="Fluminense"> Fluminense
+	</label>
+	<label>
+		<input type="radio" name="time" value="Palmeiras"> Palmeiras
+	</label>
+	<p></p>
+	<button onclick="setTime()">Enviar!</button>
+	<p id="Resultado"></p>
+	<script type="text/javascript">
+		function setTime() {
+			var time = document.querySelector("input[name='time']:checked").value;
+
+			switch (time) {
+				case 'Corinthians':
+				document.getElementById('Resultado').innerHTML = "Tamo junto meu gavião";
+				break;
+				case 'Flamengo':
+				document.getElementById('Resultado').innerHTML = "Urubu do morro";
+				break;
+				case 'Santos':
+				document.getElementById('Resultado').innerHTML = "O peixão da vila";
+				break;
+				case 'Fluminense':
+				document.getElementById('Resultado').innerHTML = "Virgem da américa";
+				break;
+				case 'Palmeiras':
+				document.getElementById('Resultado').innerHTML = "Cadê o mundial?";
+				break;
+			}
+		}
+	</script>
+</body>
+</html>
