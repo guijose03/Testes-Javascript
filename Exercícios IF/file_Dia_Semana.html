@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dia da semana</title>
+</head>
+<body>
+	<label>Qual é o dia da semana?</label>
+	<input type="text" id="dia" placeholder="Ex: Sexta-feira">
+	<p></p>
+	<button onclick="concederResposta(document.getElementById('dia').value)">Responder!</button>
+	<p id="resposta"></p>
+
+	<script type="text/javascript">
+		function concederResposta(dia) {
+			if (dia == "Sexta-feira" || dia == "sexta-feira") {
+				document.getElementById("resposta").innerHTML = "Bom fim de semana :)";
+			} else {
+				document.getElementById("resposta").innerHTML = "Bom dia :)";
+			}
+		}
+	</script>
+</body>
+</html>
