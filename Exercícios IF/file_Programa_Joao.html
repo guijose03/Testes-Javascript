@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Você é o João?</title>
+</head>
+<body>
+		<label for="nome">Digite seu nome:</label>
+		<input type="text" id="nome">
+		<p></p>
+		<button onclick="verificarNome()">Verificar</button>
+		<p id="resposta"></p>
+		<script type="text/javascript">
+			function verificarNome() {
+				var nome = document.getElementById('nome').value;
+
+				if (nome == "joão" || nome == "João"){
+					document.getElementById("resposta").innerHTML = "Você é o João!";
+				} else {
+					document.getElementById("resposta").innerHTML = "Você não é o João :(";
+				}
+			}
+		</script>
+</body>
+</html>
