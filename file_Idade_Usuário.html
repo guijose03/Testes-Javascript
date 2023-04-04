@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Conferencia de idade</title>
+</head>
+<body>
+	<label for="idade">Digite sua idade:</label>
+	<input type="number" id="idade" placeholder="Ex: 18">
+	<p></p>
+	<button onclick="verificarIdade()">Calcular!</button>
+	<p id="resposta"></p>
+	<script type="text/javascript">
+		function verificarIdade() {
+			var idade = parseInt(document.getElementById('idade').value);
+
+			if(idade >= 18){
+				document.getElementById("resposta").innerHTML = "Você pode dirigir";
+			} else {
+				document.getElementById("resposta").innerHTML = "Você não pode dirigir";
+			}
+		}
+	</script>		
+</body>
+</html>
