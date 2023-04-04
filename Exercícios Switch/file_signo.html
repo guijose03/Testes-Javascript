@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cartomante de signos</title>
+</head>
+<body>
+<label>Digite seu signo</label>
+<input type="text" id="signo">
+<p></p>
+<button onclick="setSigno(document.getElementById('signo').value)">Enviar!</button>
+<p id="resultado"></p>
+<script type="text/javascript">
+	function setSigno(signo) {
+		switch (signo){
+			case 'Áries':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Mu de Áries";
+			break;
+			case 'Touro':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Aldebaran de Touro";
+			break;
+			case 'Gêmeos':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Saga de Gêmeos";
+			break;
+			case 'Câncer':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Máscara de Morte de Câncer";
+			break;
+			case 'Leão':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Aiolia de Leão";
+			break;
+			case 'Virgem':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Shaka de Virgem";
+			break;
+			case 'Libra':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Dohko de Libra";
+			break;
+			case 'Escorpião':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Milo de Escorpião";
+			break;
+			case 'Sagitário':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Aiolos de Sagitário";
+			break;
+			case 'Capricórnio':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Shura de Capricórnio";
+			break;
+			case 'Aquário':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Camus de Aquário";
+			break;
+			case 'Peixes':
+			document.getElementById('resultado').innerHTML = "Seu cavaleiro é Afrodite de Peixes";
+			break;
+			default:
+			document.getElementById('resultado').innerHTML = "Não consegui identificar seu signo";
+		}
+	}
+</script>
+</body>
+</html>
