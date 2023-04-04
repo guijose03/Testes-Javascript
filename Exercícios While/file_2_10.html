@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Numeração numerada</title>
+</head>
+<body>
+	<label>Digite um número:</label>
+	<input type="number" id="valor">
+	<p></p>
+	<button onclick="ativar(document.getElementById('valor').value)">Envie!</button>
+	<script type="text/javascript">
+		function ativar(valor) {
+			var base = 1;
+			while (base < valor){
+				document.write("<p>"+base+"</p>");
+				base++;
+			}
+		}
+	</script>
+</body>
+</html>
