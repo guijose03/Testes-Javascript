@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora de IMC</title>
+</head>
+<body>
+	<label>Vamos calcular seu IMC:</label><p></p>
+	<label>Digite seu peso (kg):</label>
+	<input type="number" id="peso" placeholder="Ex: 70">
+	<p></p>
+	<label>Digite sua altura (metros)</label>
+	<input type="number" id="altura" placeholder="Ex: 1,75">
+	<p></p>
+	<button onclick="enviar()">Enviar!</button>
+	<p id="resposta"></p>
+
+	<script type="text/javascript">
+		function enviar() {
+			var IMC = converter(getPeso(), getAltura());
+			alert(IMC);
+			if (IMC <= 18.5) {
+				document.getElementById('resposta').innerHTML = "Você está muito abaixo do peso, reveja sua dieta :(";
+			} else if (IMC > 18.5 && IMC <= 24.9){
+				document.getElementById('resposta').innerHTML = "Você está saudável :)";
+			} else if (IMC > 24.9 && IMC <= 29.9){
+				document.getElementById('resposta').innerHTML = "Você está com sobrepeso, nada muito grave mas reveja sua dieta.";
+			} else {
+				document.getElementById('resposta').innerHTML = "Você está com obesidade.";
+			}
+		}
+
+		function getPeso(){
+			var peso = parseFloat(document.getElementById('peso').value);
+			return peso;
+		}
+
+		function getAltura(){
+			var altura = parseFloat(document.getElementById('altura').value);
+			return altura;
+		}
+
+		function converter(peso, altura){
+			var IMC = peso / (altura * altura);
+			return IMC
+		}
+	</script>
+</body>
+</html>
