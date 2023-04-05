@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora de Dois Valores simples</title>
+</head>
+<body>
+	<label>Calculadora de dois valores</label><p></p>
+	<label>Insira o primeiro valor</label>
+	<input type="number" id="v1">
+	<p></p>
+	<label>Insira o segundo valor</label>
+	<input type="number" id="v2">
+	<p></p>
+	<label>
+		<input type="radio" name="opr" value="+"> +
+	</label>
+	<label>
+		<input type="radio" name="opr" value="-"> -
+	</label>
+	<p></p>
+	<label>
+		<input type="radio" name="opr" value="*"> *
+	</label>
+	<label>
+		<input type="radio" name="opr" value="/"> /
+	</label>
+	<p></p>
+	<button onclick="ativar()">=</button>
+	<p id="resposta"></p>
+	<script type="text/javascript">
+		function ativar(){
+			var resultado = doMath(getValue("v1"), getValue("v2"), getOpr());
+			document.getElementById('resposta').innerHTML = "O resultado é "+resultado;
+		}
+		function getValue(id) {
+			var valor = parseFloat(document.getElementById(id).value);
+			return valor;
+		}
+		function getOpr() {
+			var opr = document.querySelector("input[name='opr']:checked").value;
+			return opr;
+		}
+		function doMath(value1, value2, opr){
+			switch (opr) {
+				case '+':
+					return value1 + value2;
+					break;
+				case '-':
+					return value1 - value2;
+					break;
+				case '*':
+					return value1 * value2;
+					break;
+				case '/':
+					return value1 / value2;
+					break;
+				default:
+					return null;
+				}
+		}
+	</script>
+</body>
+</html>
