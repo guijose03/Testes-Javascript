@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Montadora de veículos</title>
+</head>
+<body>
+	<label>Digite a marca do veículo:</label>
+	<input type="text" id="marca">
+	<p></p>
+	<label>Digite o modelo do veículo:</label>
+	<input type="text" id="modelo">
+	<p></p>
+	<label>Digite o ano do veículo:</label>
+	<input type="text" id="ano">
+	<p></p>
+	<button onclick="criarCarro()">Crie o carro</button>
+	<button onclick="ligarCarro()">Ligue o carro</button>
+
+	<script type="text/javascript">
+		var carro = {};
+		var setCarro = false;
+		function criarCarro() {
+			carro = {
+				marca: document.getElementById('marca').value,
+				modelo: document.getElementById('modelo').value,
+				ano: document.getElementById('ano').value
+			};
+			setCarro = true;
+		}
+		function ligarCarro() {
+			if (setCarro) {
+				document.write("Você ligou o "+carro.modelo+" vrum vrum!");
+			} else {
+				alert("Crie o carro primeiro");
+			}
+		}
+	</script>
+</body>
+</html>
