@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Criação da terceira lista</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var qtdLista = parseInt(prompt('Digite a quantidade de termos das listas'));
+		var lista1 = new Array(qtdLista);
+		var lista2 = new Array(qtdLista);
+		var lista3 = new Array(qtdLista);
+
+		for (var i = 0; i < lista1.length; i++) {
+			lista1[i] = parseInt(prompt("Digite o número:"));
+		}
+		for (var i = 0; i < lista2.length; i++) {
+			lista2[i] = parseInt(prompt("Digite o número:"));
+		}
+		for (var i = 0; i < lista3.length; i++) {
+			lista3[i] = lista1[i] + lista2[i];
+			document.write("<p> Item "+i+" da terceira lista: "+lista3[i]+"</p>");
+		}
+
+	</script>
+</body>
+</html>
