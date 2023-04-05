@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Montadora de veículos</title>
+</head>
+<body>
+	<label>Digite a marca do veículo:</label>
+	<input type="text" id="marca">
+	<p></p>
+	<label>Digite o modelo do veículo:</label>
+	<input type="text" id="modelo">
+	<p></p>
+	<label>Digite o ano do veículo:</label>
+	<input type="text" id="ano">
+	<p></p>
+	<button onclick="enviar()">Enviar!</button>
+
+	<script type="text/javascript">
+		function enviar() {
+			var carro = {
+				marca: document.getElementById('marca').value,
+				modelo: document.getElementById('modelo').value,
+				ano: document.getElementById('ano').value
+			};
+			document.write("O carro "+carro.modelo+" da marca "+carro.marca+" é do ano de "+carro.ano);
+		}
+	</script>
+</body>
+</html>
