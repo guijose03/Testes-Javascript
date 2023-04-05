@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Criação de uma pessoa</title>
+</head>
+<body>
+	<label>Criação de uma pessoa</label><p></p>
+	<label>Nome:</label>
+	<input type="text" id="nome"><p></p>
+	<label>Idade:</label>
+	<input type="text" id="idade"><p></p>
+	<label>Cidade:</label>
+	<input type="text" id="cidade"><p></p>
+	<button onclick="enviar()">Enviar!</button><p></p>
+
+	<div id="oculto" style="display: none;">
+		<label>Hobbies:</label>
+		<input type="text" id="hobbies"><p></p>
+		<button onclick="adicionarHobbie(document.getElementById('hobbies').value)">Adicione Hobbies</button>
+		<button onclick="exibirHobbies()">Exibir Hobbies</button>
+		<p></p>
+		<ul id="listaHobbies"></ul>		
+	</div>
+
+	<script type="text/javascript">
+		var pessoa = {};
+		var check = 0;
+		function enviar() {
+			var elemento = document.getElementById("oculto");
+			ativar(elemento);
+			pessoa = {
+				nome: document.getElementById('nome').value,
+				idade: document.getElementById('idade').value,
+				cidade: document.getElementById('cidade').value
+			};
+		}
+
+		function ativar(elemento) {
+			elemento.style.display = "block";
+		}
+
+		function adicionarHobbie(hobbie) {
+			if(check == 0){
+				pessoa.hobbies = [];
+				pessoa.hobbies.push(hobbie);
+				check = 1;
+			} else {
+				pessoa.hobbies.push(hobbie);
+			}
+		}
+
+		function exibirHobbies() {
+			var listaHobbies = document.getElementById('listaHobbies');
+			listaHobbies.innerHTML = "";
+			if (pessoa.hobbies && pessoa.hobbies.length > 0) {
+				for (var i = 0; i <= pessoa.hobbies.length - 1; i++) {
+					var hobby = pessoa.hobbies[i];
+					var itemLista = document.createElement("li");
+					itemLista.appendChild(document.createTextNode(hobby));
+					listaHobbies.appendChild(itemLista);
+				}
+			} else{
+				alert("Nenhum hobbie foi adicionado ainda");
+			}
+		}
+	</script>
+</body>
+</html>
