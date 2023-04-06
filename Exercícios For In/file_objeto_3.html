@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Objeto de 3 propriedades</title>
+</head>
+<body>
+<ul id="teste"></ul>
+
+	<script type="text/javascript">
+		var pessoa = {
+			nome: "Guilherme",
+			idade: 19,
+			cidade: "Peruibe"
+		};
+		var apresentacao = document.getElementById('teste');
+		teste.innerHTML = "";
+
+		for (valor in pessoa){
+			var print = "Propriedade "+valor+": "+pessoa[valor];
+			var itemLista = document.createElement("li");
+			itemLista.appendChild(document.createTextNode(print));
+			apresentacao.appendChild(itemLista);
+		}
+	</script>
+
+</body>
+</html>
