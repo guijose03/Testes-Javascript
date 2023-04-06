@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Conta Bancária</title>
+</head>
+<body>
+	<label>Esta é sua conta bancária interativa :)</label><p></p>
+	<div id="criacao">
+		<label>Insira as informações do titular da conta:</label><p></p>
+		<label>Nome:</label>
+		<input type="text" id="nomeTitular"><p></p>
+		<label>CPF:</label>
+		<input type="text" id="cpfTitular"><p></p>
+		<button onclick="criarConta()">Criar conta!</button>
+	</div>
+	<p></p>
+	<div style="display: none;" id="oculto">
+		<label id="cabecalho"></label><p></p>
+		<label>Digite o valor:</label><p></p>
+		<input type="number" id="valorOpr">
+		<button onclick="depositar(parseInt(document.getElementById('valorOpr').value))">Depositar valor</button>
+		<button onclick="sacar(parseInt(document.getElementById('valorOpr').value))">Sacar valor</button>
+		<p></p>
+		<button onclick="exibirSaldo()">Exibir Saldo!</button>
+		<p></p><label id="exibir"></label>
+	</div>
+	<script type="text/javascript">
+		var titular = {};
+		function criarConta() {
+			if (titular.nome) {
+				alert("O titular já possui uma conta criada");
+			} else {
+				titular.nome = document.getElementById('nomeTitular').value;
+				titular.cpf = document.getElementById('cpfTitular').value;
+				titular.saldo = 0;
+			}
+			var elemento = document.getElementById("oculto");
+			ativar(elemento);
+
+			elemento = document.getElementById('criacao');
+			desativar(elemento);
+
+			exibirTitular();
+		}
+		function depositar(valor) {
+			titular.saldo = titular.saldo + valor;
+			alert("Saldo foi atualizado com sucesso");
+			document.getElementById('valorOpr').value = "";
+		}
+		function sacar(valor) {
+			if(titular.saldo >= valor){
+				titular.saldo = titular.saldo - valor;
+				alert("Saldo atualizado com sucesso");
+				document.getElementById('valorOpr').value = "";
+			} else {
+				alert("Você não possui saldo disponível para este saque");
+				document.getElementById('valorOpr').value = "";
+			}
+		}
+		function ativar(elemento) {
+			elemento.style.display = "block";
+		}
+		function desativar(elemento) {
+			elemento.style.display = "none";
+		}
+		function exibirSaldo(){
+			var linha = document.getElementById('exibir');
+			linha.innerHTML = "Seu saldo atual é de R$"+titular.saldo+",00 ";
+		}
+		function exibirTitular(){
+			var cabecalho = document.getElementById('cabecalho');
+			cabecalho.innerHTML = "Seja bem vindo "+titular.nome+", digite o valor e selecione a operação desejada."
+		}
+	</script>
+</body>
+</html>
